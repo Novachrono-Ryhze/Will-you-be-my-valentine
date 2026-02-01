@@ -1,0 +1,183 @@
+<!--
+Copyright © 2026 Srivetrikumaran/NovachronoRyhze
+This code and content are licensed under CC BY-NC-ND 4.0 International.
+You may view it publicly, but you may NOT use, copy, modify, or redistribute it without explicit permission.
+Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+-->
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
+
+.heart-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  top: -10%;
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+
+.container {
+  text-align: center;
+  z-index: 1;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.title {
+  font-size: 3.2rem;
+  text-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  animation: float 3s ease-in-out infinite;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.btn {
+  padding: 16px 38px;
+  font-size: 1.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  box-shadow: 0 0 35px rgba(255, 78, 80, 0.7);
+}
+
+.yes:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 55px rgba(255, 78, 80, 1);
+}
+
+.no {
+  background: linear-gradient(135deg, #6c757d, #adb5bd);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.letter-btn {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 35px rgba(255, 78, 80, 0.7);
+  transition: bottom 0.6s ease;
+  z-index: 10;
+}
+
+.letter-btn.show {
+  bottom: 40px;
+}
+
+
+.letter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 20;
+}
+
+.letter-overlay.hidden {
+  display: none;
+}
+
+.letter-content {
+  background: #fff8f8;
+  color: #333;
+  border-radius: 22px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh; /* scrollable if taller */
+  overflow-y: auto;
+  text-align: left;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  animation: slideUp 0.6s ease;
+}
+
+/* optional scrollbar styling */
+.letter-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.letter-content::-webkit-scrollbar-thumb {
+  background: #ff4e50;
+  border-radius: 4px;
+}
+
+.letter-content::-webkit-scrollbar-track {
+  background: #ffe6e6;
+}
+
+.letter-content h2 {
+  color: #ff4e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}

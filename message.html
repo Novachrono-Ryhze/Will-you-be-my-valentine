@@ -1,0 +1,49 @@
+<!--
+Copyright © 2026 Srivetrikumaran/NovachronoRyhze
+This code and content are licensed under CC BY-NC-ND 4.0 International.
+You may view it publicly, but you may NOT use, copy, modify, or redistribute it without explicit permission.
+Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Some things...</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: radial-gradient(circle at top, #ff758c, #ff7eb3); flex-direction:column; color: #fff;">
+  <div class="heart-rain"></div>
+
+  <h1 style="margin-top:80px;">Some things I never told you...</h1>
+  <p id="typedText" style="font-size:1.5rem;margin-top:30px;min-height:60px;"></p>
+
+  <button onclick="location.href='surprise.html'" class="btn yes" style="margin-top:50px;">What's next?</button>
+
+  <script>
+    const lines = [
+      "Even after 2 years, my heart races when I see you ❤️",
+      "Ordinary days with you are extraordinary ✨",
+      "Every silence with you feels like home 💕",
+      "I want a thousand more tomorrows together 💖"
+    ];
+    let idx = 0;
+    const el = document.getElementById("typedText");
+
+    function typeLine() {
+      el.textContent = "";
+      let i = 0;
+      const text = lines[idx++ % lines.length];
+      const interval = setInterval(() => {
+        el.textContent += text[i++];
+        if (i >= text.length) clearInterval(interval);
+      }, 50);
+    }
+
+    setInterval(typeLine, 3500);
+    typeLine();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
