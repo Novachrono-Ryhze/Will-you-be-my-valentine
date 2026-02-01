@@ -1,9 +1,9 @@
-<!--
+/*
 Copyright © 2026 Srivetrikumaran/NovachronoRyhze
 This code and content are licensed under CC BY-NC-ND 4.0 International.
 You may view it publicly, but you may NOT use, copy, modify, or redistribute it without explicit permission.
 Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
--->
+*/
 
 const heartContainer = document.querySelector(".heart-rain");
 
@@ -92,3 +92,4 @@ letterBtn.addEventListener("click", () => {
 closeLetter.addEventListener("click", () => {
   letterOverlay.classList.add("hidden");
 });
+
